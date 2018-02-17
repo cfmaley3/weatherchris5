@@ -30,7 +30,7 @@ from flask import Flask, request, make_response, jsonify
 from forecast import Forecast, validate_params
 
 APP = Flask(__name__)
-#LOG = APP.logger
+LOG = APP.logger
 
 
 
@@ -56,7 +56,8 @@ def webhook():
         res = weather_outfit(req)
     elif action == 'weather.temperature':
         res = weather_temperature(req)
-   
+    else:
+           LOG.error('Unexpected action.')
 
     
 
