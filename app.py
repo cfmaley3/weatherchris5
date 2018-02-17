@@ -34,7 +34,8 @@ LOG = APP.logger
 
 
 
-@app.route('/webhook', methods=['POST'])
+@APP.route('/webhook', methods=['POST'])
+
 def webhook():
     """This method handles the http requests for the API.AI webhook
 
