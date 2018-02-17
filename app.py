@@ -41,7 +41,9 @@ def webhook():
 
     This is meant to be used in conjunction with the weather API.AI agent
     """
+    LOG.error(req)
     req = request.get_json(silent=True, force=True)
+      LOG.error(req)
     try:
         action = req.get('result').get('action')
     except AttributeError:
