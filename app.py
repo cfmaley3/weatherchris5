@@ -43,7 +43,7 @@ def webhook():
     """
     LOG.error(req)
     req = request.get_json(silent=True, force=True)
-      LOG.error(req)
+     
     try:
         action = req.get('result').get('action')
     except AttributeError:
@@ -60,7 +60,7 @@ def webhook():
     elif action == 'weather.temperature':
         res = weather_temperature(req)
     else:
-           LOG.error('Unexpected action.')
+           res = weather_activity(req)
 
     
 
