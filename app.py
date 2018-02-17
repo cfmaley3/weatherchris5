@@ -59,8 +59,7 @@ def webhook():
     else:
        # LOG.error('Unexpected action.')
 
-    print 'Action: ' + action
-    print 'Response: ' + res
+    
 
     return make_response(jsonify({'speech': res, 'displayText': res}))
 
@@ -74,8 +73,7 @@ def weather(req):
     """
     parameters = req['result']['parameters']
 
-    print 'API.AI Parameters:'
-    print json.dumps(parameters, indent=4)
+   
 
     # validate request parameters, return an error if there are issues
     error, forecast_params = validate_params(parameters)
