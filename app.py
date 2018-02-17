@@ -26,13 +26,15 @@ import json
 
 from flask import Flask, request, make_response, jsonify
 
+
 from forecast import Forecast, validate_params
 
 APP = Flask(__name__)
-LOG = APP.logger
+#LOG = APP.logger
 
 
-@APP.route('/', methods=['POST'])
+
+@app.route('/webhook', methods=['POST'])
 def webhook():
     """This method handles the http requests for the API.AI webhook
 
@@ -55,7 +57,7 @@ def webhook():
     elif action == 'weather.temperature':
         res = weather_temperature(req)
     else:
-        LOG.error('Unexpected action.')
+       # LOG.error('Unexpected action.')
 
     print 'Action: ' + action
     print 'Response: ' + res
